@@ -258,10 +258,12 @@ public class HawtJNI {
             file.delete();
         }
         
-        file = new File(nativeOutput, "windows");
-        file.mkdirs();
-        file = new File(file, "stdint.h");
+        File winfiles = new File(nativeOutput, "windows");
+        winfiles.mkdirs();
+        file = new File(winfiles, "stdint.h");
         generateFromResource("windows/stdint.h", file);
+        file = new File(winfiles, "unistd.h");
+        generateFromResource("windows/unistd.h", file);
         
         progress("Done.");
     }

@@ -257,7 +257,7 @@ public class BuildMojo extends AbstractMojo {
 
     private void vsBasedBuild(File buildDir) throws CommandLineException, MojoExecutionException, IOException {
     	
-        FileUtils.copyDirectoryStructureIfModified(packageDirectory, buildDir);
+    	FileUtils.copyDirectoryStructureIfModified(packageDirectory, buildDir);
 
         Library library = new Library(name);
         String platform;
